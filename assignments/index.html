@@ -37,6 +37,7 @@
                 <hr/>
 
                 <div id='expenses' ng-show='!isExpenses'>
+                    <h4>Income</h4>
                     <table class="table table-bordered table-striped table-hover">
                         <th>Name</th><th>HRA</th><th>LTA</th><th>Medical</th><th>Total</th>
                         <tr ng-repeat="x in expenseData">
@@ -50,6 +51,7 @@
                 </div>    
 
                 <div id='expenses' ng-show='isExpenses'>
+                    <h4>Expenses</h4>
                     <table class="table table-bordered table-striped table-hover">
                         <th>Name</th><th>Movies</th><th>Food</th><th>Travel</th><th>Total</th>
                         <tr ng-repeat="x in incomeData">

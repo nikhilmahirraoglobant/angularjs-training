@@ -2,7 +2,7 @@ var mainApp = angular.module('mainApp',[]);
 
 mainApp.controller('mainCotroller',function($scope){
    
-    $scope.isExpenses = true;
+    $scope.isExpenses = false;
     
     $scope.showIncome = function()
     {
