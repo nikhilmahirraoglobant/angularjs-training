@@ -16,8 +16,11 @@
         
         
         <style>
-           
+           .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+                border: none;
+            }
         </style>
+        
     </head>
     
     <body  ng-app="mainApp">
@@ -27,7 +30,7 @@
             
             <div class = 'container'>
             
-                <h4>Expense Manager</h4>
+                <h3>Expense Manager</h3>
                 
                 <div class="btn-group">
                     <input type="submit" class="btn btn-primary" value="Show Income" ng-click='showIncome()'></input>
@@ -39,13 +42,23 @@
                 <div id='expenses' ng-show='!isExpenses'>
                     <h4>Income</h4>
                     <table class="table table-bordered table-striped table-hover">
-                        <th>Name</th><th>HRA</th><th>LTA</th><th>Medical</th><th>Total</th>
+                        <th>Name</th><th>HRA</th><th>LTA</th><th>Medical</th><th>Total</th><th>Action</th>
                         <tr ng-repeat="x in expenseData">
+                            
                             <td>{{ x.name }}</td>
                             <td>{{ x.hra }}</td>
                             <td>{{ x.lta }}</td>
                             <td>{{ x.medical }}</td>
-                            <td>{{x.hra + x.lta + x.medical}}</td>
+                            <td>{{+x.hra + +x.lta + +x.medical}}</td>
+                            
+                            <td>
+                                <button type="button" class="btn btn-default btn-sm" ng-click="removeData($index)">
+                                    <span class="glyphicon glyphicon-remove-sign"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm" ng-click="updateData($index)">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                            </td>
                         </tr>
                     </table>
                 </div>    
@@ -53,16 +66,63 @@
                 <div id='expenses' ng-show='isExpenses'>
                     <h4>Expenses</h4>
                     <table class="table table-bordered table-striped table-hover">
-                        <th>Name</th><th>Movies</th><th>Food</th><th>Travel</th><th>Total</th>
-                        <tr ng-repeat="x in incomeData">
+                        <th>Name</th><th>Movies</th><th>Food</th><th>Travel</th><th>Total</th><th>Action</th>
+                        <tr ng-repeat="x in expenseData">
+                            
                             <td>{{ x.name }}</td>
                             <td>{{ x.movies }}</td>
                             <td>{{ x.food }}</td>
                             <td>{{ x.travel }}</td>
-                            <td>{{ x.movies  +  x.food + x.travel }}</td>
+                            <td>{{ +x.movies +  +x.food + +x.travel }}</td>
+                            
+                             <td>
+                                 <button type="button" class="btn btn-default btn-sm" ng-click="removeData($index)">
+                                    <span class="glyphicon glyphicon-remove-sign"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm" ng-click="updateData($index)">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                            </td>
+                            
                         </tr>
                     </table>
-                </div>              
+                </div> 
+                
+                <hr/>        
+        
+                <form name='newDataForm' ng-show='isAddFormShow' ng-submit="submitData()">
+                    <h4>Add New</h4>
+                    
+                    <table class="table borderless">
+                        
+                        <tr >
+                            <td> <input type="text" class="form-control" placeholder="Enter Name" ng-model='data.name' required></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="Enter HRA" ng-model='data.hra' required></td>
+                            <td> <input type="text" class="form-control" placeholder="Enter LTA" ng-model='data.lta' required></td>
+                            <td> <input type="text" class="form-control" placeholder="Enter Medical" ng-model='data.medical' required></td>
+                        </tr>
+                        
+                        <tr>
+                            <td> <input type="text" class="form-control" placeholder="Enter Movies" ng-model='data.movies' required></td>
+                            <td> <input type="text" class="form-control" placeholder="Enter Food" ng-model='data.food' required></td>
+                            <td> <input type="text" class="form-control" placeholder="Enter Travel" ng-model='data.travel' required></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <input type="submit" class="btn btn-primary" ng-show='!isUpdateMode' value="Submit"</input>
+                            </td>
+                        </tr>
+        
+                    </table>                 
+                    
+                </form>
+                
+                <input type="submit" class="btn btn-primary" value="Add New" ng-click='addNewData()'></input>
+
             </div>
         </div>
     </body>
