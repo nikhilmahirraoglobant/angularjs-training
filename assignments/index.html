@@ -100,20 +100,26 @@
                         </tr>
                         
                         <tr>
-                            <td><input type="text" class="form-control" placeholder="Enter HRA" ng-model='data.hra' required></td>
-                            <td> <input type="text" class="form-control" placeholder="Enter LTA" ng-model='data.lta' required></td>
-                            <td> <input type="text" class="form-control" placeholder="Enter Medical" ng-model='data.medical' required></td>
+                            <td><input type="number" class="form-control" placeholder="Enter HRA" ng-model='data.hra' required></td>
+                            <td> <input type="number" class="form-control" placeholder="Enter LTA" ng-model='data.lta' required></td>
+                            <td> <input type="number" class="form-control" placeholder="Enter Medical" ng-model='data.medical' required></td>
                         </tr>
                         
                         <tr>
-                            <td> <input type="text" class="form-control" placeholder="Enter Movies" ng-model='data.movies' required></td>
-                            <td> <input type="text" class="form-control" placeholder="Enter Food" ng-model='data.food' required></td>
-                            <td> <input type="text" class="form-control" placeholder="Enter Travel" ng-model='data.travel' required></td>
+                            <td> <input type="number" class="form-control" placeholder="Enter Movies" ng-model='data.movies' required></td>
+                            <td> <input type="number" class="form-control" placeholder="Enter Food" ng-model='data.food' required></td>
+                            <td> <input type="number" class="form-control" placeholder="Enter Travel" ng-model='data.travel' required></td>
                         </tr>
                         
                         <tr>
                             <td>
                                 <input type="submit" class="btn btn-primary" ng-show='!isUpdateMode' value="Submit"</input>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <input type="submit" class="btn btn-primary" ng-show='isUpdateMode' value="Update"</input>
                             </td>
                         </tr>
         

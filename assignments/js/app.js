@@ -5,6 +5,7 @@ mainApp.controller('mainCotroller',function($scope){
     $scope.isExpenses = false;
     $scope.isAddFormShow = false;
     $scope.isUpdateMode = false;
+    $scope.index = 0;
     
     $scope.showIncome = function()
     {
@@ -18,11 +19,17 @@ mainApp.controller('mainCotroller',function($scope){
     
     $scope.submitData = function()
     {
-        console.log( $scope.data.name, $scope.data.lta, $scope.data.hra);
+        if($scope.isUpdateMode)
+        {
+            $scope.expenseData[$scope.index] = {name: $scope.data.name, hra: $scope.data.hra,lta : $scope.data.lta,
+                                     medical: $scope.data.medical,movies:$scope.data.movies,food: $scope.data.food,travel:$scope.data.travel};
+        }
+        else
+        {
+            $scope.expenseData.push({name: $scope.data.name, hra: $scope.data.hra,lta : $scope.data.lta,
+                                     medical: $scope.data.medical,movies:$scope.data.movies,food: $scope.data.food,travel:$scope.data.travel});
         
-        $scope.expenseData.push({name: $scope.data.name, hra: $scope.data.hra,lta : $scope.data.lta,
-                                 medical: $scope.data.medical,movies:$scope.data.movies,food: $scope.data.food,travel:$scope.data.travel});
-        
+        }    
         $scope.isAddFormShow = false;        
     };
     
@@ -41,10 +48,15 @@ mainApp.controller('mainCotroller',function($scope){
     
     $scope.updateData = function(index)
     {
-        $scope.data =  $scope.expenseData[index];
+        var tempData = JSON.stringify($scope.expenseData[index]);
+        
+        $scope.data =  JSON.parse(tempData);
+        
         $scope.isAddFormShow = true;
         
         $scope.isUpdateMode = true;
+        
+        $scope.index = index;
     };
     
     
