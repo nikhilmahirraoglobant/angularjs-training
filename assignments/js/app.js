@@ -41,9 +41,11 @@ mainApp.controller('mainCotroller',function($scope, managerService){
     
     $scope.updateData = function(index)
     {
-        var tempData = JSON.stringify(managerService.expenseData[index]);
+        //var tempData = JSON.stringify(managerService.expenseData[index]);
         
-        $scope.data =  JSON.parse(tempData);
+        //$scope.data =  JSON.parse(tempData);
+        
+        $scope.data = managerService.expenseData[index];
         
         $scope.isAddFormShow = true;
         
