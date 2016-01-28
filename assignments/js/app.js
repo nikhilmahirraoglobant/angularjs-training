@@ -1,4 +1,4 @@
-var mainApp = angular.module('mainApp',[]);
+var mainApp = angular.module('mainApp',['ngMessages']);
 
 mainApp.controller('mainCotroller',function($scope){
    
@@ -58,6 +58,11 @@ mainApp.controller('mainCotroller',function($scope){
         
         $scope.index = index;
     };
+    
+    $scope.cancled = function(index)
+    {
+        $scope.isAddFormShow = false;
+    }
     
     
     $scope.expenseData = [
