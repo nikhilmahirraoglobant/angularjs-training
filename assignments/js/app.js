@@ -24,7 +24,9 @@ mainApp.controller('mainCotroller',function($scope, managerService){
         
         $scope.isAddFormShow = true;
         
-        $scope.isUpdateMode = false;
+        $scope.isUpdateMode = false;        
+        
+        $scope.newDataForm.$setPristine();
     };
     
     $scope.submitData = function()
@@ -57,6 +59,7 @@ mainApp.controller('mainCotroller',function($scope, managerService){
     $scope.cancaled= function(index)
     {
         $scope.isAddFormShow = false;
+        
     }
     
     
