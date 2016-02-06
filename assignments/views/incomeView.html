@@ -1,0 +1,23 @@
+<div id='income'>
+    <h4>Income</h4>
+    <table class="table table-bordered table-striped table-hover">
+        <th>Name</th><th>HRA</th><th>LTA</th><th>Medical</th><th>Total Income</th><th>Action</th>
+        <tr ng-repeat="x in expenseData">
+
+            <td>{{:: x.name }}</td>
+            <td>{{:: x.hra }}</td>
+            <td>{{:: x.lta }}</td>
+            <td>{{:: x.medical }}</td>
+            <td>{{+x.hra + +x.lta + +x.medical}}</td>
+
+            <td>
+                <button type="button" class="btn btn-default btn-sm" ng-click="removeData($index)">
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="updateData($index)">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

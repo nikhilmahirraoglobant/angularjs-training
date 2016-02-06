@@ -1,0 +1,7 @@
+{
+    "employees":[
+        {"name":"John", "hra":14000, "lta":4000, "medical":1500, "movies":200, "food":3000, "travel":2500},
+        {"name":"Smith", "hra":12000, "lta":2000, "medical":1300, "movies":100, "food":2500, "travel":3200},
+        {"name":"Peter", "hra":10000, "lta":1400, "medical":1400, "movies":350, "food":3200, "travel":2100}
+    ]
+}
