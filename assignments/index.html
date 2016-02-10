@@ -5,8 +5,28 @@
     <head>
         
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">        
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style.css">        
         
+    </head>
+    
+    <body  ng-app="mainApp">
+        
+        <div>
+            
+            <br/>   
+            
+            <div class = 'container'>
+            
+                <h3>Expense Manager</h3>
+                
+                <hr/>
+
+                <div ui-view></div>        
+        
+            </div>
+    
+        </div>
+    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -19,39 +39,10 @@
         
         <script src="js/sevices/managerService.js"></script>
         
-        <script src="js/controllers/mainController.js"></script>
-        <script src="js/controllers/expenseController.js"></script>
-        <script src="js/controllers/incomeController.js"></script>
+        <script src="js/controllers/homeController.js"></script>
+        <script src="js/controllers/detailController.js"></script>
         <script src="js/controllers/editController.js"></script>
-        
-        
-        
-    </head>
-    
-    <body  ng-app="mainApp">
-        <div ng-controller = "mainCotroller">
-            
-            <br/>   
-            
-            <div class = 'container'>
-            
-                <h3>Expense Manager</h3>
-                
-                <div class="btn-group">
-                    <input type="submit" class="btn btn-primary" value="Show Income" ui-sref="app.income"></input>
-                    <input type="submit" class="btn btn-primary" value="Show Expense" ui-sref="app.expenses"></input>     
-                </div>
 
-                <hr/>
-
-                <div ui-view></div>        
-        
-                <hr/>   
-                
-                <div ui-view="editView"></div>                
-                
-            </div>
-        </div>
     </body>
     
 </html>

@@ -1,0 +1,26 @@
+<div id='income'>
+    <h3><b>Name : {{currentEmployee.name }}</b></h3>
+    <h4><b>Income : {{+currentEmployee.hra + +currentEmployee.lta + +currentEmployee.medical}} Rs.</b></h4>
+    <table class="table table-bordered table-striped table-hover detail-tbl">        
+        
+        <tr><th class="lbl-header">HRA</th><td>{{currentEmployee.hra }}</td></tr>
+        <tr><th>LTA</th><td>{{currentEmployee.lta }}</td></tr>
+        <tr><th>Medical</th><td>{{currentEmployee.medical }}</td></tr>
+       
+    </table>
+    
+    <hr/>
+    
+    <h4><b>Expense : {{ +currentEmployee.movies +  +currentEmployee.food + +currentEmployee.travel }} Rs.</b></h4>
+    
+    <table class="table table-bordered table-striped table-hover detail-tbl">
+        
+        <tr><th class="lbl-header">Movies</th><td>{{currentEmployee.movies }}</td></tr>
+        <tr><th>Food</th><td>{{currentEmployee.food }}</td></tr>
+        <tr><th>Travel</th><td>{{currentEmployee.travel }}</td></tr>
+    </table>
+    
+    <input type="submit" class="btn btn-primary" value="Edit" ui-sref="edit({index: index, mode:'updateMode'})"></input>
+    <input type="submit" class="btn btn-primary" value="Back" ui-sref="home"></input>
+    
+</div>

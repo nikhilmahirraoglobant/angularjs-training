@@ -1,39 +1,42 @@
-mainApp.controller('editController',function($scope, managerService){
+mainApp.controller('editController',function($scope, $state, $stateParams, managerService){
     
     $scope.data = {};
     
+    if($stateParams.mode == 'updateMode')
+    {
+        $scope.data = angular.copy(managerService.expenseData[$stateParams.index]);
+        
+        $scope.isUpdateMode = true; 
+    }
+    else
+    {
+        $scope.isUpdateMode = false; 
+    }
+    
     $scope.submitData = function()
     {
-        managerService.submitData($scope);
+        managerService.submitData($scope, $stateParams.index);
         
-        $scope.isAddFormShow = false;          
+        if($stateParams.mode == 'updateMode')
+        {
+            $state.go('detail', {index: $stateParams.index, name:$scope.data.name });
+        }
+        else
+        {
+           $state.go('home'); 
+        }
     };
     
     $scope.cancaled= function(index)
     {
-        $scope.isAddFormShow = false;        
+        if($stateParams.mode == 'updateMode')
+        {
+            $state.go('detail', {index: $stateParams.index, name:$scope.data.name });
+        }
+        else
+        {
+           $state.go('home'); 
+        }
     };
-    
-    $scope.addNewData = function()
-    {
-        $scope.data = {};
-        
-        $scope.isAddFormShow = true;
-        
-        $scope.isUpdateMode = false;        
-        
-        $scope.newDataForm.$setPristine();
-    };
-    
-    $scope.$on('updateFired', function() {
-         
-        var tempData = JSON.parse(JSON.stringify(managerService.expenseData[managerService.index]));
-        
-        $scope.data = tempData;//managerService.expenseData[managerService.index];
-        
-        $scope.isAddFormShow = true;
-        
-        $scope.isUpdateMode = true; 
-    }); 
     
 });

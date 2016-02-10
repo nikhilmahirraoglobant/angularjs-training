@@ -1,32 +1,25 @@
 mainApp.config(function($stateProvider, $urlRouterProvider){
    
-    $urlRouterProvider.otherwise('/income');
+    $urlRouterProvider.otherwise('/home');
     
-    $stateProvider.state('app', {
-        abstract: true,
-        views: {
-
-            '': {
-                templateUrl: 'views/content.html',
-
-            },       
-            'editView': {
-                templateUrl: 'views/editView.html',
-                controller: 'editController'
-            }
-        }
+    $stateProvider
+    
+    .state('home', {
+        url: '/home',
+        templateUrl: 'views/homeView.html',
+        controller: 'homeController'
     })
     
-    .state('app.expenses', {
-        url: '/expenses',
-        templateUrl: 'views/expensesView.html',
-        controller: 'expenseController'
+    .state('detail', {
+        url: '/detail/:name/:index',
+        templateUrl: 'views/detailView.html',
+        controller: 'detailController'
     })
     
-    .state('app.income', {
-        url: '/income',
-        templateUrl: 'views/incomeView.html',
-        controller: 'incomeController'
+    .state('edit', {
+        url: '/edit/:mode/:index',
+        templateUrl: 'views/editView.html',
+        controller: 'editController'
     });
         
 });

@@ -1,0 +1,30 @@
+<div id='expenses'>
+    <h4>Employees</h4>
+    <table class="table table-bordered table-striped table-hover">
+        <th>Name</th><th>Income</th><th>Expense</th><th class="btn-col">Action</th>
+        <tr ng-repeat="x in expenseData">
+
+            <td>{{x.name }}</td>
+            <td>{{+x.hra + +x.lta + +x.medical}}</td>
+            <td>{{ +x.movies +  +x.food + +x.travel }}</td>
+
+             <td class="btn-col">
+                 
+                <button type="button" class="btn btn-default btn-sm" ui-sref="detail({ index: $index, name: x.name})">
+                    <span class="glyphicon glyphicon-expand"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm" ui-sref="edit({index: $index, mode:'updateMode'})">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="removeData($index)">
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </button>
+                 
+            </td>
+
+        </tr>
+    </table>
+    
+    <input type="submit" class="btn btn-primary" ng-show='!isAddFormShow' value="Add New" ui-sref="edit({mode:'addNewMode'})"></input>
+    
+</div>

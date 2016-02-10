@@ -5,3 +5,5 @@
         {"name":"Peter", "hra":10000, "lta":1400, "medical":1400, "movies":350, "food":3200, "travel":2100}
     ]
 }
+
+[{"name":"Amit","hra":2500,"lta":15000,"medical":10000,"movies":50000,"food":15000,"travel":20000},{"name":"Vijay","hra":3500,"medical":20000,"lta":15000,"movies":750000,"travel":40000,"food":45000},{"name":"Nitin","hra":5500,"medical":8000,"lta":10000,"movies":150000,"travel":30000,"food":55000}]

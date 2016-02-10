@@ -1,5 +1,13 @@
-<style>
-   .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
         border: none;
     }
-</style>
+.table .btn-col {
+    width: 140px;
+    text-align: center;
+}
+#income .detail-tbl{
+    width: 50%;
+}
+.table .lbl-header {
+    width: 50%;
+}

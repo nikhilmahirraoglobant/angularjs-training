@@ -1,4 +1,4 @@
-<form name='newDataForm' ng-show='isAddFormShow' ng-submit="newDataForm.$valid && submitData()" novalidate>
+<form name='newDataForm' ng-submit="newDataForm.$valid && submitData()" novalidate>
     <h4 ng-show='!isUpdateMode'>New Entry Form</h4>
     <h4 ng-show='isUpdateMode'>Update Form</h4>
 
@@ -6,7 +6,7 @@
 
         <tr>
             <td> 
-                <input type="text" class="form-control" name='name' ng-minlength="3" ng-maxlength="30" placeholder="Enter Name" ng-model='data.name' required>
+                Name:<input type="text" class="form-control" name='name' ng-minlength="3" ng-maxlength="30" placeholder="Enter Name" ng-model='data.name' required>
                 <div ng-messages="newDataForm.name.$error" ng-if="newDataForm.$submitted">
                     <div ng-message="required">This field is required</div>
                     <div ng-message="minlength">Message must be over 3 characters</div>
@@ -18,21 +18,21 @@
 
         <tr>
             <td>
-                <input type="number" min='0' class="form-control" placeholder="Enter HRA" name='hra' ng-model='data.hra' required>  
+                HRA:<input type="number" min='0' class="form-control" placeholder="Enter HRA" name='hra' ng-model='data.hra' required>  
                  <div ng-messages="newDataForm.hra.$error" ng-if="newDataForm.$submitted">
                     <div ng-message="required">This field is required</div>
                 </div>
             </td>
 
             <td> 
-                <input type="number" min='0' class="form-control" placeholder="Enter LTA" name='lta' ng-model='data.lta' required>
+                LTA:<input type="number" min='0' class="form-control" placeholder="Enter LTA" name='lta' ng-model='data.lta' required>
                 <div ng-messages="newDataForm.lta.$error" ng-if="newDataForm.$submitted">
                     <div ng-message="required">This field is required</div>
                 </div>
             </td>
 
             <td> 
-                <input type="number" min='0' class="form-control" placeholder="Enter Medical" name='medical' ng-model='data.medical' required>
+                Medical:<input type="number" min='0' class="form-control" placeholder="Enter Medical" name='medical' ng-model='data.medical' required>
                 <div ng-messages="newDataForm.medical.$error" ng-if="newDataForm.$submitted">
                     <div ng-message="required">This field is required</div>
                 </div>
@@ -41,21 +41,21 @@
 
         <tr>
             <td> 
-                <input type="number" min='0' class="form-control" placeholder="Enter Movies" name='movies' ng-model='data.movies' required>
+                Movies:<input type="number" min='0' class="form-control" placeholder="Enter Movies" name='movies' ng-model='data.movies' required>
                 <div ng-messages="newDataForm.movies.$error" ng-if="newDataForm.$submitted">
                     <div ng-message="required">This field is required</div>
                 </div>
             </td>
 
             <td> 
-                <input type="number" min='0' class="form-control" placeholder="Enter Food" name='food' ng-model='data.food' required>
+                Food:<input type="number" min='0' class="form-control" placeholder="Enter Food" name='food' ng-model='data.food' required>
                 <div ng-messages="newDataForm.food.$error" ng-if="newDataForm.$submitted">
                     <div ng-message="required">This field is required</div>
                 </div>
             </td>
 
             <td> 
-                <input type="number" min='0' class="form-control" placeholder="Enter Travel" name='travel' ng-model='data.travel' required>
+                Travel:<input type="number" min='0' class="form-control" placeholder="Enter Travel" name='travel' ng-model='data.travel' required>
                 <div ng-messages="newDataForm.travel.$error" ng-if="newDataForm.$submitted">
                     <div ng-message="required">This field is required</div>
                 </div>
@@ -74,4 +74,4 @@
 
 </form>
 
-<input type="submit" class="btn btn-primary" ng-show='!isAddFormShow' value="Add New" ng-click='addNewData()'></input>
+
