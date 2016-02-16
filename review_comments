@@ -1,0 +1,11 @@
+1. Passing scope as parameter is a very Bad practice. Never pass on scopes to controllers/services or any called function outside the scope. Inn the submitData() api of managerService, scope of controller is passed. Instead pass data which is needed for updation.
+
+2. Show success as well as error messages. 
+
+3. There should always be a user re-confirmation before removing/deleting data.
+
+4. Show help on hovering action icons like View/Edit/Delete
+
+5. Show proper messages for validations. for eg. below  messages should contain field name "Name" in place of "Message"
+			Message must be over 3 characters
+			Message must not exceed 30 characters
