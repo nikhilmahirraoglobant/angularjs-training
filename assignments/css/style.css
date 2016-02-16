@@ -11,3 +11,10 @@
 .table .lbl-header {
     width: 50%;
 }
+
+.header{
+    background-color: #8eb2c3; 
+    width: 100%; 
+    height: 65px
+    
+}

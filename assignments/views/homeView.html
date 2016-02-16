@@ -1,13 +1,21 @@
 <div id='expenses'>
     <h4>Employees</h4>
+    
+    <hr/>
+    
+    <label>Search: </label><input ng-model="searchKeyword">
+    
+    <hr/>
+    
     <table class="table table-bordered table-striped table-hover">
-        <th>Name</th><th>Income</th><th>Expense</th><th class="btn-col">Action</th>
-        <tr ng-repeat="x in expenseData">
+        <th>Name</th><th>Income</th><th>Expense</th></th><th>Net Balance</th><th class="btn-col">Action</th>
+        <tr ng-repeat="x in expenseData | filter: searchKeyword">
 
             <td>{{x.name }}</td>
             <td>{{+x.hra + +x.lta + +x.medical}}</td>
             <td>{{ +x.movies +  +x.food + +x.travel }}</td>
-
+            <td>{{+x.hra + +x.lta + +x.medical - +x.movies - +x.food - +x.travel }}</td>
+            
              <td class="btn-col">
                  
                 <button type="button" class="btn btn-default btn-sm" ui-sref="detail({ index: $index, name: x.name})">
