@@ -15,7 +15,7 @@ mainApp.controller('editController',function($scope, $state, $stateParams, manag
     
     $scope.submitData = function()
     {
-        managerService.submitData($scope, $stateParams.index);
+        managerService.submitData($scope.data, $scope.isUpdateMode,  $stateParams.index);
         
         if($stateParams.mode == 'updateMode')
         {

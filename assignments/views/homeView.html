@@ -3,7 +3,7 @@
     
     <hr/>
     
-    <label>Search: </label><input ng-model="searchKeyword">
+    <label>Search: </label><input ng-model="searchKeyword" title="Search">
     
     <hr/>
     
@@ -18,13 +18,13 @@
             
              <td class="btn-col">
                  
-                <button type="button" class="btn btn-default btn-sm" ui-sref="detail({ index: $index, name: x.name})">
+                <button type="button" title="Detail" class="btn btn-default btn-sm" ui-sref="detail({ index: $index, name: x.name})">
                     <span class="glyphicon glyphicon-expand"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-sm" ui-sref="edit({index: $index, mode:'updateMode'})">
+                <button type="button" title="Edit" class="btn btn-default btn-sm" ui-sref="edit({index: $index, mode:'updateMode'})">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-sm" ng-click="removeData($index)">
+                <button type="button" title="Delete" class="btn btn-default btn-sm" ng-click="removeData($index)">
                     <span class="glyphicon glyphicon-remove-sign"></span>
                 </button>
                  

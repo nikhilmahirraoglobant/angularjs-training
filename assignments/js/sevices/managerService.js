@@ -18,19 +18,19 @@ mainApp.service('managerService',function($rootScope, $http){
         that.updateOnServer();
     };
     
-    this.submitData = function(tempScope, index)
+    this.submitData = function(data, isUpdateMode, index)
     {
         //Update data model for updating server
-        if(tempScope.isUpdateMode)
+        if(isUpdateMode)
         {
             that.expenseData[index] = {
-                name: tempScope.data.name, hra: tempScope.data.hra,lta : tempScope.data.lta, medical: tempScope.data.medical,movies:tempScope.data.movies,food: tempScope.data.food, travel:tempScope.data.travel
+                name: data.name, hra: data.hra,lta : data.lta, medical: data.medical, movies:data.movies, food: data.food, travel:data.travel
             };
         }
         else
         {
             that.expenseData.push({
-                name: tempScope.data.name, hra: tempScope.data.hra,lta : tempScope.data.lta,                            medical:tempScope.data.medical, movies:tempScope.data.movies, food:tempScope.data.food, travel:tempScope.data.travel
+                name: data.name, hra: data.hra,lta : data.lta, medical: data.medical, movies:data.movies, food: data.food, travel:data.travel
             });        
         }
         
